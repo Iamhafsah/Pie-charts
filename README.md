@@ -1,1 +1,1 @@
-A Pie chart created with HTML and CSS.
+A Pie chart built using HTML and CSS.

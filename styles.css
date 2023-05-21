@@ -12,13 +12,14 @@ body{
 }
 .pie-wrap{
   border: 2px solid lightgrey;
-  width: 400px;
-  height: 400px;
+  width: 0px;
+  height: 0px;
   margin: 10% 50px;
   position: relative;
   border-radius: 50%;
   overflow: hidden;
   color: black;
+  animation: pie-size 750ms 500ms ease forwards;
 }
 .pie-wrap .entry{
   display: flex;
@@ -128,6 +129,7 @@ body{
   padding: 10px 15px;
   cursor: pointer;
   margin-bottom: 8px;
+  visibility: hidden;
 }
 input[type="radio"]{
   display: none;
@@ -136,22 +138,29 @@ input[type="radio"]{
 /* background colors for the entry keys */
 .rice-label{
   background-color: lightyellow;
+  visibility: hidden;
+  animation: display-key 500ms 1s  ease forwards;
 }
 .beans-label{
   background-color: pink;
+  animation: display-key 500ms 1.5s  ease forwards;
 }
 .plantain-label{
   background-color: purple;
   color: white;
+  animation: display-key 500ms 2s  ease forwards;
 }
 .potato-label{
   background-color: limegreen;
+  animation: display-key 500ms 2.5s  ease forwards;
 }
 .yam-label{
   background-color: wheat;
+  animation: display-key 500ms 3s  ease forwards;
 }
 .pasta-label{
   background-color: skyblue;
+  animation: display-key 500ms 3.5s  ease forwards;
 }
 
 /* the texts displayed below */
@@ -190,4 +199,25 @@ input[type="radio"]{
 }
 .pasta-text{
   border-color:  skyblue;
+}
+
+
+/* animation styles */
+@keyframes pie-size {
+  from{
+    width:0px;
+  }
+  to{
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@keyframes display-key {
+  from{
+    visibility: hidden;
+  }
+  to{
+    visibility: visible;
+  }
 }
